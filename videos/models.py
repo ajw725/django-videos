@@ -6,8 +6,14 @@ class Movie(models.Model):
     length = models.PositiveIntegerField()
     release_year = models.PositiveIntegerField()
 
+    def __str__(self):
+        return self.title
+
 
 class Customer(models.Model):
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
-    phone = models.PositiveIntegerField()
+    phone = models.CharField(max_length=16)
+
+    def __str__(self):
+        return f'{self.first_name} {self.last_name}'
