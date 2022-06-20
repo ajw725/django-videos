@@ -2,5 +2,9 @@ from django.contrib import admin
 from . import models
 
 
-admin.site.register(models.Movie)
+class MovieAdmin(admin.ModelAdmin):
+    fields = ('release_year', 'title', 'length')
+
+
+admin.site.register(models.Movie, MovieAdmin)
 admin.site.register(models.Customer)
